@@ -6,7 +6,6 @@ const Assistance = connection.define('assistance',{
     is_attend: {
         type: DataTypes.BOOLEAN
     },
-  
 },{
     timestamps: false
 })
