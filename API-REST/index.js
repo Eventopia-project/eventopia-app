@@ -6,7 +6,7 @@ const app = express();
 
 // Importamos las funciones de la conexión base de datos
 const { checkdb ,syncModels } = require('./database/index.js');
-const  initializeRelations  = require('./database/relations.js');
+const initializeRelations = require('./database/relations.js');
 
 const initilalizeAnListenExpress = () => {
     try {
@@ -25,8 +25,8 @@ const initilalizeAnListenExpress = () => {
 async function checkAndSyncMySQL() {
     try {
         await checkdb();
+        initializeRelations();
         await syncModels();
-        await initializeRelations();
     } catch (error) {
         console.error('We have a problem with sync database', error);
     }

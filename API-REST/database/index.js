@@ -19,10 +19,11 @@ const checkdb = async () => {
     }
 
 }
+// Creamos las tablas en la base de datos
 const syncModels = async () => {
     try {
-        await connection.sync({alter:true})
-        console.log('Models add')
+        await connection.sync({ alter: true })
+        console.log('Models added')
     } catch (error) {
         console.log(error)
         
