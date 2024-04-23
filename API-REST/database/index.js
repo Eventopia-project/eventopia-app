@@ -2,8 +2,8 @@ const { Sequelize } = require('sequelize');
 require('dotenv').config();
 
 // Creando una instancia de sequelize
-const connection = new Sequelize(process.env.DB_NAME, process.env.USERNAME, process.env.PASSWORD, {
-    host: process.env.HOST,
+const connection = new Sequelize(process.env.DB_NAME, process.env.DB_USERNAME, process.env.DB_PASSWORD, {
+    host: process.env.DB_HOST,
     dialect: process.env.DIALECT,
     port: process.env.DB_PORT,
     logging: false

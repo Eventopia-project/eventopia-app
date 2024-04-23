@@ -6,7 +6,7 @@ const app = express();
 
 // Importamos las funciones de la conexión base de datos
 const { checkdb ,syncModels } = require('./database/index.js');
-const { initializeRelations } = require('./database/relations.js');
+const  initializeRelations  = require('./database/relations.js');
 
 const initilalizeAnListenExpress = () => {
     try {
