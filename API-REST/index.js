@@ -5,7 +5,7 @@ const morgan = require('morgan');
 const app = express();
 
 // Importamos las funciones de la conexión base de datos
-const { connection, checkdb } = require('./database/index.js');
+const { checkdb } = require('./database/index.js');
 
 const initilalizeAnListenExpress = () => {
     try {
@@ -34,7 +34,7 @@ const startApi = async () => {
         await checkAndSyncMySQL();
         initilalizeAnListenExpress();
     } catch (error) {
-        console.error('e have a problem with api', error)
+        console.error('We have a problem with api', error)
     }
 }
 
