@@ -2,21 +2,22 @@ const { DataTypes } = require( 'sequelize');
 
 const { connection } =require('../../database/index');
 
-const User = connection.define('user',{
+const Event = connection.define('event',{
     name: {
         type: DataTypes.STRING
     },
-    email: {
+    description: {
         type: DataTypes.STRING
     },
-    password: {
+    date_event: {
+        type: DataTypes.DATE
+    },
+    Location: {
         type: DataTypes.STRING
     },
-    role: {
-        type: DataTypes.ENUM('member', 'admin'),
-    }
+
 
 },{
     timestamps: false
 })
-module.exports = User;
+module.exports = Event;

@@ -5,7 +5,7 @@ const morgan = require('morgan');
 const app = express();
 
 // Importamos las funciones de la conexión base de datos
-const { checkdb } = require('./database/index.js');
+const { checkdb ,syncModels } = require('./database/index.js');
 
 const initilalizeAnListenExpress = () => {
     try {
@@ -24,6 +24,7 @@ const initilalizeAnListenExpress = () => {
 async function checkAndSyncMySQL() {
     try {
         await checkdb();
+        await syncModels();
     } catch (error) {
         console.error('We have a problem with sync database', error);
     }
