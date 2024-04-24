@@ -69,7 +69,8 @@ const login = async (request, response) => {
             // Devuelve el token generado con el estado 200 -éxito-
             return response.status(200).json({ token });
         } else {
-            // Si la contraseña no es correcta
+            // Si la contraseña no es correcta, tira un not found
+            return response.status(404).json({ message: 'Email or password wrong.' });
         }
     } catch (error) {
         console.error(error);
@@ -79,5 +80,6 @@ const login = async (request, response) => {
 
 // Exportamos la función signUp para que se pueda utilizar en otros archivos
 module.exports = {
-    signUp
+    signUp,
+    login
 };
