@@ -10,10 +10,10 @@ const { getAllUsers,
 
 // Asignamos las rutas con sus correspondientes métodos
 router.get('/users', getAllUsers);
-router.get('/user:id', getOneUser);
+router.get('/:id', getOneUser);
 router.post('/newUser', createUser);
-router.put('/user:id', updateUser);
-router.delete('/user:id', deleteUser);
+router.put('/:id', updateUser);
+router.delete('/:id', deleteUser);
 
 // Exportamos el enrutamiento -de este archivo-
 module.exports = router;
