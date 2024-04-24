@@ -7,7 +7,6 @@ const Event = require('../models/event.model.js');
 const getAllEvents = async (request, response) => {
     try {
         const events = await Event.findAll();
-        console.log('¿un objeto?', events);
         return response.status(200).json(events);
     } catch (error) {
         console.error(error);
@@ -15,7 +14,7 @@ const getAllEvents = async (request, response) => {
     }
 }
 
-// Método para devolver un eventos
+// Método para devolver un evento
 const getOneEvent = async (request, response) => {
     try {
         const event = await Event.findByPk(request.params.id);
@@ -46,7 +45,7 @@ const createEvent = async (request, response) => {
     }
 }
 
-// Método para actualizar el evento
+// Método para actualizar un evento en concreto
 const updateEvent = async (request, response) => {
     try {
         const [eventExist, event] = await Event.update(request.body, {
@@ -55,7 +54,7 @@ const updateEvent = async (request, response) => {
                 id: request.params.id,
             },
         });
-        // Si el evento está registrado -bbdd-
+        // Si existe el evento -bbdd-
         if (eventExist !== 0) { // eventExist hace referencia al nº de elementos que ha <encontrado> dentro de Event.update
             return response.status(200).json({ message: 'Event updated successfully.', event: event });
         } else {

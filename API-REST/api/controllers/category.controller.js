@@ -2,12 +2,11 @@
 const { response } = require('express');
 const Category = require('../models/category.model.js');
 
-// En esta función conseguimos todos las categorías -try-
+// En esta función conseguimos todas las categorías -try-
 // En caso de que haya un error, se manda un mensaje con su código, el 500 -catch-
 const getAllCategories = async (request, response) => {
     try {
         const categories = await Category.findAll();
-        console.log('¿un objeto?', categories);
         return response.status(200).json(categories);
     } catch (error) {
         console.error(error);
@@ -19,7 +18,7 @@ const getAllCategories = async (request, response) => {
 const getOneCategory = async (request, response) => {
     try {
         const category = await Category.findByPk(request.params.id);
-        if (category) { // Si lo encuentra, de devuelve la categoría
+        if (category) { // Si lo encuentra, que devuelva la categoría
             return response.status(200).json(category);
         } else { // Si no, que te devuelva un 404 - not found
             return response.status(404).send('Category not found')
@@ -30,7 +29,7 @@ const getOneCategory = async (request, response) => {
     }
 }
 
-// Método para crear las categorías
+// Método para crear una categoría
 const createCategory = async (request, response) => {
     try {
         const category = await Category.create({
@@ -43,7 +42,7 @@ const createCategory = async (request, response) => {
     }
 }
 
-// Método para actualizar las categorías
+// Método para actualizar una categoría
 const updateCategory = async (request, response) => {
     try {
         const [categoryExist, category] = await Category.update(request.body, {
@@ -52,7 +51,7 @@ const updateCategory = async (request, response) => {
                 id: request.params.id,
             },
         });
-        // Si la categoría está registrado -bbdd-
+        // Si la categoría existe -bbdd-
         if (categoryExist !== 0) { // categoryExist hace referencia al nº de elementos que ha <encontrado> dentro de Category.update
             return response.status(200).json({ message: 'Category updated successfully.', category: category });
         } else {
