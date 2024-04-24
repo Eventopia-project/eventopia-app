@@ -14,6 +14,7 @@ const User = connection.define('user',{
     },
     role: {
         type: DataTypes.ENUM('member', 'admin'),
+        defaultValue: 'member'
     }
 
 },{

@@ -1,6 +1,6 @@
 const { DataTypes } = require( 'sequelize');
 
-const { connection } =require('../../database/index');
+const { connection } = require('../../database/index');
 
 const Assistance = connection.define('assistance',{
     is_attend: {
