@@ -85,11 +85,32 @@ const deleteUser = async (request, response) => {
     }
 }
 
+// Creamos la función profile
+const getProfile = async (request, response) => {
+    try {
+        const user = await User.findOne({
+            where: {
+                email: response.locals.user.email
+            },
+            include: ['roles'] // en realidad no son roles, preguntar al profesor
+        });
+        if (user) {
+            return response.status(200).json(user);
+        } else {
+            return response.status(404).send('User not found');
+        }
+    } catch (error) {
+        console.error(error);
+        return response.status(500).json({ message: 'There was a problem obtaining a user' })
+    }
+}
+
 // Exportamos los métodos creados
 module.exports = {
     getAllUsers,
     getOneUser,
     createUser,
     updateUser,
-    deleteUser
+    deleteUser,
+    getProfile
 }
