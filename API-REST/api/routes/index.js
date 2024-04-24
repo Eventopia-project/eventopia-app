@@ -4,5 +4,8 @@ const router = require('express').Router();
 // Usamos el enrutador para manejar todas la peticiones dirigidas a '/user'
 router.use('/user', require('./user.router')); // user.router hace referencia al archivo user.router.js dentro de la carpeta routes
 
+// Usamos el enrutador para manejar todas la peticiones dirigidas a '/event'
+router.use('/event', require('./event.router')); // user.router hace referencia al archivo user.router.js dentro de la carpeta routes
+
 // Exportamos el enrutador para que se pueda usar en otros archivos
 module.exports = router;
