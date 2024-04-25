@@ -1,11 +1,12 @@
-import React from 'react'
+import Navbar from "../Navbar/Navbar"
 
 function Header() {
     
   return (
-    <div>
-      
-    </div>
+    <header className='header'>
+      <div className="header__logo"><img src="" alt="eventopia-logo" /></div>
+      <Navbar />
+    </header>
   )
 }
 
