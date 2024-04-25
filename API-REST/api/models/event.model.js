@@ -12,9 +12,12 @@ const Event = connection.define('event',{
     date_event: {
         type: DataTypes.DATE
     },
-    Location: {
+    location: {
         type: DataTypes.STRING
     },
+    price: {
+        type: DataTypes.INTEGER
+    }
 
 
 },{

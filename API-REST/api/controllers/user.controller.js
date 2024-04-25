@@ -86,7 +86,7 @@ const deleteUser = async (request, response) => {
 }
 
 // Creamos la función profile
-const getProfile = async (request, response) => {
+/* const getProfile = async (request, response) => {
     try {
         const user = await User.findOne({
             where: {
@@ -103,7 +103,7 @@ const getProfile = async (request, response) => {
         console.error(error);
         return response.status(500).json({ message: 'There was a problem obtaining a user' })
     }
-}
+} */
 
 // Exportamos los métodos creados
 module.exports = {

@@ -12,6 +12,9 @@ const User = connection.define('user',{
     password: {
         type: DataTypes.STRING
     },
+    location: {
+        type: DataTypes.STRING
+    },
     role: {
         type: DataTypes.ENUM('member', 'admin'),
         defaultValue: 'member'
