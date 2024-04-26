@@ -1,3 +1,4 @@
+import dayjs from 'dayjs'
 import { useEffect, useState } from 'react'
 import Carrousel from '../../components/Carrousel/Carrousel'
 import Categories from '../../components/Categories/Categories'
@@ -21,9 +22,10 @@ function Home() {
       return (
             <div key={index} className="event-item">
               <div>
-                date: {eventItem.date_event}
+                date: {dayjs(eventItem.date).format('MM/YYYY')}
+                location: {eventItem.location}
               </div>
-              <h2>{eventItem.title}</h2>
+              <h2>{eventItem.name}</h2>
               <p>{eventItem.description}</p>
               <p>{eventItem.price}</p>
             </div>  
