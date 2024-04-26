@@ -2,7 +2,7 @@ import api from "./config";
 
 export const getEvents = async () => {
     try {
-        const response = await api.get("/events");
+        const response = await api.get("/event/events");
         return response.data;
     } catch (error) {
         console.error(error);
