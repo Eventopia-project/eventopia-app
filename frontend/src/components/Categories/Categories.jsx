@@ -1,7 +1,7 @@
 import './Categories.css'
 import React, { useEffect, useState } from 'react';
-import { getEvents } from '../../services/events'
 import { getCategories } from '../../services/categories'
+import { Link } from 'react-router-dom';
 
 function Categories() {
   const [categories, setCategories] = useState({});
@@ -32,9 +32,14 @@ function Categories() {
   return (
     <section className='section__categories'>
       <h2 className="section__h2">Here are some of our categories</h2>
-        <div className="categoriesList">
-          { showCategories() }
-        </div>
+      <div className="categoriesList">
+        { showCategories() }
+      </div>
+      <div className='go-categories'>
+        <p>Do you want to see more categories?</p>
+        <Link to="/categories"><button>Go to categories</button></Link>
+      </div>
+
     </section>
   );
 }

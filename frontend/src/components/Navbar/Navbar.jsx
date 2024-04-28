@@ -6,7 +6,7 @@ function Navbar({inFooter}) {
     <nav className="nav">
       <ul className="ul__nav">
         <li>
-          <Link to="#"><button>About</button></Link>
+          <Link to="/about"><button>About</button></Link>
         </li>
         <li>
         <Link to="#"><button>Login</button></Link>

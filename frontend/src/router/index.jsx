@@ -3,6 +3,8 @@ import Home from '../pages/Home/Home'
 import Layout from '../layouts/Layout'
 
 import NotFound from '../pages/NotFound/NotFound'
+import About from '../pages/About/About'
+import Categories from '../pages/Categories/Categories'
 
 const router = createBrowserRouter([
   {
@@ -13,6 +15,14 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />,
+      },
+      {
+        path: '/about',
+        element: <About />,
+      },
+      {
+        path: '/categories',
+        element: <Categories />,
       },
     ],
   },
