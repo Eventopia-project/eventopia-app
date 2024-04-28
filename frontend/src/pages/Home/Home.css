@@ -2,12 +2,3 @@
     width: 100%;
     height: auto;
 }
-
-.event-item {
-    width: 100%;
-    height: calc(20rem + 1vh);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgb(232, 255, 127);
-}

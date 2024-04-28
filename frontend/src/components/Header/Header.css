@@ -1,8 +1,11 @@
 .header {
     width: 100%;
     height: 10vh;
-    background-color: #24ca24;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    z-index: 3;
+/*     background-color: rgba(3, 12, 90, 0.329); */
+    backdrop-filter: blur(5px);
+    background-image: linear-gradient(to bottom, #030c5a54, #ffffff00);
 }

@@ -1,8 +1,46 @@
+@import 'slick-carousel/slick/slick.css';
+@import 'slick-carousel/slick/slick-theme.css';
 .section {
     width: 100%;
-    height: 40vh;
+    height: 100vh;
     background-color: orange;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: -10vh;
+    position: relative;
+}
+
+.slider__section {
+    width: 100%;
+    height: 100%;
+}
+
+.img-item img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.layer {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(3, 12, 90, 0.596);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.presentation-app {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
 }
