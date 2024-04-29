@@ -23,20 +23,32 @@ function Carrousel() {
       <Slider {...settings} className='slider__section'>
         <div className='img-item'>
           <img
-            src='https://images.pexels.com/photos/19770352/pexels-photo-19770352/free-photo-of-ciudad-puesta-de-sol-mujer-acera.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+            src='/public/images/concert.webp'
             alt='img1'
           />
         </div>
         <div className='img-item'>
           <img
-            src='https://images.pexels.com/photos/19777965/pexels-photo-19777965/free-photo-of-ciudad-calle-montana-viaje.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+            src='/public/images/fair.webp'
             alt='img2'
           />
         </div>
         <div className='img-item'>
           <img
-            src='https://images.pexels.com/photos/19781192/pexels-photo-19781192/free-photo-of-ciudad-hombre-gafas-de-sol-calle.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+            src='/public/images/race.webp'
             alt='img3'
+          />
+        </div>
+        <div className='img-item'>
+          <img
+            src='/public/images/three-girls.webp'
+            alt='img4'
+          />
+        </div>
+        <div className='img-item'>
+          <img
+            src='/public/images/influencer-taking-photo-cake-market.webp'
+            alt='img5'
           />
         </div>
       </Slider>
