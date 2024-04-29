@@ -5,6 +5,8 @@ import Layout from '../layouts/Layout'
 import NotFound from '../pages/NotFound/NotFound'
 import About from '../pages/About/About'
 import Categories from '../pages/Categories/Categories'
+import SignUp from '../pages/SignUp/SignUpView'
+import Login from '../pages/Login/LoginView'
 
 const router = createBrowserRouter([
   {
@@ -23,6 +25,14 @@ const router = createBrowserRouter([
       {
         path: '/categories',
         element: <Categories />,
+      },
+      {
+        path: '/signup',
+        element: <SignUp />,
+      },
+      {
+        path: '/login',
+        element: <Login />,
       },
     ],
   },

@@ -37,6 +37,7 @@ const createUser = async (request, response) => {
             name: request.body.name,
             email: request.body.email,
             password: request.body.password,
+            location: request.body.location,
         });
         return response.status(200).json({ message: 'User created successfully.', user: user });
     } catch (error) {
