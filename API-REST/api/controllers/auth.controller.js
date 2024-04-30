@@ -8,6 +8,7 @@ const bycrypt = require('bcrypt'); // cifrado
 // Definimos la función signUp, una función asíncrona para manejar la creación de usuarios
 const signUp = async (request, response) => {
     try {
+
         const existingUser = await User.findOne({
             where:{
                 email: request.body.email
@@ -26,7 +27,8 @@ const signUp = async (request, response) => {
         const user = await User.create({
             name: request.body.name,
             email: request.body.email,
-            password: request.body.password
+            password: request.body.password,
+            location: request.body.location
         });
 
         // Creamos el payload del token, que incluye el email del usuario
@@ -35,7 +37,7 @@ const signUp = async (request, response) => {
         const token = jwt.sign(payload, 'secret', { expiresIn: '2h'});
 
         // Si todo va bien, devolvemos el token al usuario con un estado -200-
-        return response.status(200).json({ token }); // === { token: token }
+        return response.status(200).json({ token, user }); // === { token: token }
 
     } catch (error) {
         console.log(error);

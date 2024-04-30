@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { signUp } from '../../services/auth'
 import './SignUp.css'
 
 function SignUp() {
+  const navigate = useNavigate()
   const [name, setName] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
@@ -11,6 +12,7 @@ function SignUp() {
   const [city, setCity] = useState('')
   const [isChecked, setIsChecked] = useState(false)
   const [isValid, setIsValid] = useState(false)
+  const [isRegistered, setIsRegistered] = useState(false)
 
   const handleName = (e) => {
     setName(e.target.value)
@@ -18,6 +20,10 @@ function SignUp() {
 
   const handleEmail = (e) => {
     setEmail(e.target.value)
+  }
+
+  const handleCity = (e) => {
+    setCity(e.target.value)
   }
 
   const handlePassword = (e) => {
@@ -62,9 +68,21 @@ function SignUp() {
         }
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    alert('Sign Up')
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await signUp({name, email, password, city});
+      if (response && response.token) {
+        localStorage.setItem('token', response.token);
+        localStorage.setItem('member', response.user.name);
+        setIsRegistered(true);
+        navigate('/profile')
+      } else {
+        console.error('Error');
+      }
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   useEffect(() => {
@@ -80,7 +98,7 @@ function SignUp() {
           <input type='email' placeholder='Email' value={email} required onChange={handleEmail} className={styleEmail(email)}/>
           <input type='password' value={password} onChange={handlePassword} placeholder='Password' required className={stylePassword(password)}/>
           <input type='password' value={confirmPassword} onChange={handleConfirmPassword} placeholder='Confirm Password' required className={styleConfirmPassword(confirmPassword)}/>
-          <input type='text' placeholder='City or Country' />
+          <input type='text' value={city} placeholder='City or Country' onChange={handleCity}/>
           <input type="checkbox" name="privacy" required checked={isChecked} onChange={checkboxClicked}/> <span>Accept policy </span>
           <button type='submit' disabled={!isValid}>Sign Up</button>
         </form>

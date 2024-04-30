@@ -1,6 +1,7 @@
 // Importamos el modelo User de la carpeta models
 const { response } = require('express');
 const User = require('../models/user.model.js');
+const Event = require('../models/event.model.js');
 
 // En esta función conseguimos todos los usuarios -try-
 // En caso de que haya un error, se manda un mensaje con su código, el 500 -catch-
@@ -87,14 +88,23 @@ const deleteUser = async (request, response) => {
 }
 
 // Creamos la función profile
-/* const getProfile = async (request, response) => {
+const getProfile = async (request, response) => {
     try {
         const user = await User.findOne({
             where: {
                 email: response.locals.user.email
             },
-            include: ['roles'] // en realidad no son roles, preguntar al profesor
+            include: [
+                {
+                    model: Event
+                },
+                {
+                    model: Event,
+                    as: 'owner'
+                }
+            ]
         });
+
         if (user) {
             return response.status(200).json(user);
         } else {
@@ -104,7 +114,7 @@ const deleteUser = async (request, response) => {
         console.error(error);
         return response.status(500).json({ message: 'There was a problem obtaining a user' })
     }
-} */
+}
 
 // Exportamos los métodos creados
 module.exports = {
@@ -112,5 +122,6 @@ module.exports = {
     getOneUser,
     createUser,
     updateUser,
-    deleteUser
+    deleteUser,
+    getProfile
 }

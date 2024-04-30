@@ -7,6 +7,7 @@ import About from '../pages/About/About'
 import Categories from '../pages/Categories/Categories'
 import SignUp from '../pages/SignUp/SignUpView'
 import Login from '../pages/Login/LoginView'
+import Profile from '../pages/Profile/Profile'
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login />,
+      },
+      {
+        path: '/profile',
+        element: <Profile />,
       },
     ],
   },

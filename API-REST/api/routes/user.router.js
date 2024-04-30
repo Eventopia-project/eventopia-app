@@ -12,7 +12,7 @@ const { getAllUsers,
 const { checkAuth, checkAdmin } = require('../middlewares/auth.js');
 
 // Ruta para obtener el perfil del usuario
-/* router.get('/profile', checkAuth, getProfile); */
+router.get('/profile', checkAuth, getProfile);
 
 // Asignamos las rutas con sus correspondientes métodos
 router.get('/users', checkAuth, checkAdmin, getAllUsers);
