@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import { getProfile } from '../../services/users'
+import { createEvent } from '../../services/events'
+import { getCategories } from '../../services/categories'
 import UserEvents from '../../components/UserEvents/UserEvents'
 
 function Profile() {
   const [user, setUser] = useState({})
+  const [userId, setUserId] = useState(0)
+  const [ownerId, setOwnerId] = useState(0)
+  const [categoryId, setCategoryId] = useState(0)
+  const [categories, setCategories] = useState([])
   // variables de estado del formulario
   const [name, setName] = useState('')
   const [description, setDescription] = useState('')
@@ -11,14 +17,18 @@ function Profile() {
   const [location, setLocation] = useState('')
   const [price, setPrice] = useState('')
   const [isValid, setIsValid] = useState(false)
+  const [isSend, setIsSend] = useState(false)
 
   const getProfileData = async () => {
     const result = await getProfile()
     setUser(result)
+    setUserId(user.id)
+    setOwnerId(user.id)
   }
+
   useEffect(() => {
     getProfileData()
-  }, [])
+  }, [isSend])
 
   useEffect(() => {
     checkValidity()
@@ -44,6 +54,33 @@ function Profile() {
     setPrice(e.target.value)
   }
 
+  const handleCategory = (event) => {
+    setCategoryId(event.target.value);
+  }
+  
+  console.log(userId)
+  console.log(ownerId)
+
+  useEffect(() => {
+    const showAllCategories = async () => {
+      const categories = await getCategories()
+      setCategories(categories)
+    }
+    showAllCategories()
+  }, [])
+
+  useEffect(() => {
+    console.log(categoryId);
+  }, [categoryId]);
+  
+
+  const categoryOptions = categories?.map((category, index) => {
+    console.log(category.id, category.name)
+    return (
+      <option key={index} value={category.id} name="category">{category.name}</option>
+    )
+  })
+
   const checkValidity = () => {
     if (date !== '' &&
         description !== '' &&
@@ -57,12 +94,24 @@ function Profile() {
         }
   }
 
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    try {
+      const response = await createEvent({name, description, date, location, price, categoryId})
+      setIsSend(!isSend)
+      console.log(response)
+      console.log('se ha añadido correctamente');
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   console.log(user)
   return (
     <div>
       <section>
         <h2>Create your event</h2>
-        <form>
+        <form onSubmit={handleSubmit}>
           <label htmlFor="name">Name</label>
           <input type="text" id="name" name="name" onChange={handleName}/>
           <label htmlFor="description">Description</label>
@@ -71,6 +120,13 @@ function Profile() {
           <input type="date" id="date" name="date" onChange={handleDate}/>
           <label htmlFor="location">Location</label>
           <input type="text" id="location" name="location" onChange={handleLocation}/>
+          <label htmlFor="category">
+            Category
+            <select name="category" id="category" onChange={handleCategory}>
+              <option selected>Select your category</option>
+              { categoryOptions }
+            </select>
+            </label>
           <label htmlFor="price">Price</label>
           <input type="number" id="price" name="price"  onChange={handlePrice}/>
           <button type='submit' disabled={!isValid}>Create event</button>

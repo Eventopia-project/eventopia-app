@@ -20,7 +20,9 @@ export const getEvent = async (id) => {
 
 export const createEvent = async (event) => {
   try {
-    const response = await api.post('/event', event)
+    event["ownerId"] = parseInt(localStorage.getItem('id'))
+    console.log(event)
+    const response = await api.post('/event/newEvent', event)
     return response.data
   } catch (error) {
     console.error(error)

@@ -45,7 +45,9 @@ const createEvent = async (request, response) => {
       date_event: request.body.date_event,
       location: request.body.location,
       price: request.body.price,
-      userId: request.body.userId
+      userId: request.body.ownerId,
+      categoryId: request.body.categoryId,
+      ownerId: request.body.ownerId
     });
     return response
       .status(200)

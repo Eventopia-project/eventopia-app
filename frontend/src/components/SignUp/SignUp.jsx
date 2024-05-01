@@ -75,6 +75,7 @@ function SignUp() {
       if (response && response.token) {
         localStorage.setItem('token', response.token);
         localStorage.setItem('member', response.user.name);
+        localStorage.setItem('id', response.user.id);
         setIsRegistered(true);
         navigate('/profile')
       } else {

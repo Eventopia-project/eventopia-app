@@ -1,8 +1,4 @@
-import { useLocation } from "react-router-dom"
-
 const EventCard = ({ name, description, date, location, price, isButtonRender }) => {
-  const locationPath = useLocation();
-  const showOnButtons = ['/profile'];
   return (
     <div className="event-card">
       <h2>{name}</h2>
