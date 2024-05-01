@@ -17,12 +17,12 @@ function Categories() {
   function showCategories() {
     if (categories.length < 3) {
       return categories.map((category, index) => {
-        return <div key={index}>{category.name}</div>
+        return <div key={index} className='category-item'>{category.name}</div>
       })  
     } else if (categories.length > 3) {
       return categories.map((category, index) => {
         if (index < 3) {
-          return <div key={index}>{category.name}</div>
+          return <div key={index} className='category-item'>{category.name}</div>
         }
       })
     }
@@ -31,13 +31,12 @@ function Categories() {
 
   return (
     <section className='section__categories'>
-      <h2 className="section__h2">Here are some of our categories</h2>
+      <h2 className="section__h2 josefin-sans-font">Here are some of our categories</h2>
       <div className="categoriesList">
         { showCategories() }
       </div>
       <div className='go-categories'>
-        <p>Do you want to see more categories?</p>
-        <Link to="/categories"><button>Go to categories</button></Link>
+        <Link to="/categories"><button className='link-button-cat'>See more</button></Link>
       </div>
 
     </section>

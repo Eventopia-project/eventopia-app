@@ -1,5 +1,5 @@
 .nav {
-    width: 50%;
+    width: 70%;
 }
 
 .ul__nav {
@@ -7,4 +7,16 @@
     display: flex;
     justify-content: space-around;
     list-style-type: none;
+}
+
+.ul__nav li a,
+.ul__nav li button {
+    color: var(--blue-darker);
+    font-size: calc(0.5em + .5vw);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+a, Link, button {
+    cursor: pointer;
 }

@@ -5,7 +5,9 @@ function Header() {
     
   return (
     <header className='header'>
-      <div className="header__logo"><img src="" alt="eventopia-logo" /></div>
+      <div className="header__logo">
+        <img src="/public/images/eventopia-logo.png" alt="eventopia-logo" />
+      </div>
       <Navbar />
     </header>
   )

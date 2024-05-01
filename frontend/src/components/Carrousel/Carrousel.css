@@ -3,7 +3,6 @@
 .section {
     width: 100%;
     height: 100vh;
-    background-color: orange;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,7 +24,7 @@
 .layer {
     width: 100%;
     height: 100vh;
-    background-color: rgba(3, 12, 90, 0.596);
+    background: linear-gradient(180deg, rgba(231, 195, 115, 0.35) 0%, rgba(122, 182, 193, 0.35) 59.62%, rgba(234, 168, 212, 0.35) 100%);
     position: absolute;
     top: 0;
     left: 0;
@@ -44,3 +43,55 @@
     left: 0;
     z-index: 2;
 }
+
+.presentation-app__h1 {
+    font-size: calc(4em + 3.4vw);
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+}
+
+.part1 {
+    color: var(--pink);
+}
+
+.part2 {
+    color: var(--yellow);
+}
+
+.presentation-app__p{
+    width: 70%;
+    font-size: calc(1em + 1vw);
+    color: var(--blue-darker);
+    text-align: center;
+}
+
+.arrow {
+    position: absolute !important;
+    top: 85%;
+    right: 50% !important;
+    width: calc(6em + 1vw);
+    height: calc(6em + 1vh);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 3;
+}
+
+@keyframes moveUpDown {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+      -webkit-transform: translateY(-10px);
+      -moz-transform: translateY(-10px);
+      -ms-transform: translateY(-10px);
+      -o-transform: translateY(-10px);
+}
+  }
+  
+  .arrow {
+    animation: moveUpDown 2s linear infinite;
+    -webkit-animation: moveUpDown 2s linear infinite;
+}
+  

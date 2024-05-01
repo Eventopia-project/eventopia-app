@@ -3,11 +3,13 @@ import Home from '../pages/Home/Home'
 import Layout from '../layouts/Layout'
 
 import NotFound from '../pages/NotFound/NotFound'
-import About from '../pages/About/About'
+import AboutView from '../pages/AboutView/AboutView'
 import Categories from '../pages/Categories/Categories'
 import SignUp from '../pages/SignUp/SignUpView'
 import Login from '../pages/Login/LoginView'
 import Profile from '../pages/Profile/Profile'
+import PrivacyView from '../pages/PrivacyView/PrivacyView'
+import TermsView from '../pages/TermsView/TermsView'
 
 const router = createBrowserRouter([
   {
@@ -21,7 +23,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/about',
-        element: <About />,
+        element: <AboutView />,
       },
       {
         path: '/categories',
@@ -38,6 +40,14 @@ const router = createBrowserRouter([
       {
         path: '/profile',
         element: <Profile />,
+      },
+      {
+        path: '/privacy',
+        element: <PrivacyView />,
+      },
+      {
+        path: '/terms',
+        element: <TermsView />,
       },
     ],
   },
