@@ -96,14 +96,18 @@ function SignUp() {
         <h1 className='signup__h1'>Sign Up</h1>
         <form className='signup__form' onSubmit={handleSubmit}>
           <input value={name} onChange={handleName} type='text' className={styleNameUser(name)} placeholder='Your Name' required/>
-          <input type='email' placeholder='Email' value={email} required onChange={handleEmail} className={styleEmail(email)}/>
-          <input type='password' value={password} onChange={handlePassword} placeholder='Password' required className={stylePassword(password)}/>
-          <input type='password' value={confirmPassword} onChange={handleConfirmPassword} placeholder='Confirm Password' required className={styleConfirmPassword(confirmPassword)}/>
+          <input type='email' placeholder='Email'  value={email} required onChange={handleEmail} className={styleEmail(email)}/>
+          <input type='password' value={password} id="password-sign" onChange={handlePassword} placeholder='Password' required className={stylePassword(password)}/>
+          <input type='password' value={confirmPassword} id="password-sign" onChange={handleConfirmPassword} placeholder='Confirm Password' required className={styleConfirmPassword(confirmPassword)}/>
           <input type='text' value={city} placeholder='City or Country' onChange={handleCity}/>
           <input type="checkbox" name="privacy" required checked={isChecked} onChange={checkboxClicked}/> <span>Accept policy </span>
-          <button type='submit' disabled={!isValid}>Sign Up</button>
+          <button type='submit' className='signup-button' disabled={!isValid}>Sign Up</button>
         </form>
-        <p>Already have an account? <Link to='/login'><button>Log In</button></Link></p>
+        <p>Already have an account? 
+          <Link to='/login'><button>Log In</button></Link>
+          or
+          <Link to='/'><button>Go Home</button></Link>
+        </p>
       </div>
     </main>
   )

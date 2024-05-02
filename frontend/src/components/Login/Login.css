@@ -1,6 +1,6 @@
 .container-login {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,8 +34,8 @@
     padding: 1em;
 }
 
-input[type="email"], 
-input[type="password"] {
+.email-login, 
+.pass-login {
     width: 80%;
     padding: .5em;
     margin: .8em 0;
@@ -45,8 +45,8 @@ input[type="password"] {
     font-size: calc(.4em + .5vw);
 }
 
-input[type="email"]:focus,
-input[type="password"]:focus {
+.email-login:focus, 
+.pass-login:focus{
     outline: none;
     border-bottom: .1em solid var(--light-blue);
 }

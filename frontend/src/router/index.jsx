@@ -5,7 +5,7 @@ import Layout from '../layouts/Layout'
 import NotFound from '../pages/NotFound/NotFound'
 import AboutView from '../pages/AboutView/AboutView'
 import Categories from '../pages/Categories/Categories'
-import SignUp from '../pages/SignUp/SignUpView'
+import SignUpView from '../pages/SignUpView/SignUpView'
 import LoginView from '../pages/LoginView/LoginView'
 import Profile from '../pages/Profile/Profile'
 import PrivacyView from '../pages/PrivacyView/PrivacyView'
@@ -31,7 +31,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/signup',
-        element: <SignUp />,
+        element: <SignUpView />,
       },
       {
         path: '/login',

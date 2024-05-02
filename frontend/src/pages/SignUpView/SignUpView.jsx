@@ -4,9 +4,9 @@ import './SignUpView.css'
 
 function SignUpView() {
   return (
-    <div>
+    <main className='container-sign'>
       <SignUp />
-    </div>
+    </main>
   )
 }
 

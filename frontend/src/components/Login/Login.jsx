@@ -9,8 +9,8 @@ function Login() {
       <div className='login'>
         <h1 className='login__h1'>Login</h1>
         <form className='login__form' /* onSubmit={handleSubmit} */>     
-          <input type='email' placeholder='Email' /*value="" required  onChange={handleEmail} */ className=""/>
-          <input type='password' /*value=""  onChange={handlePassword} */ placeholder='Password' required className=""/>
+          <input type='email' placeholder='Email' /*value="" required  onChange={handleEmail} */ className="email-login"/>
+          <input type='password' /*value=""  onChange={handlePassword} */ placeholder='Password' required className="pass-login"/>
           <button type='submit' /* disabled={!isValid} */>Log In</button>
         </form>
         <p className="sign-up-text">Don't have an account? <Link to='/signup'><button className="signup-button">Sign Up</button></Link></p>
