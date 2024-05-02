@@ -11,8 +11,8 @@ const initializeRelations = require('./database/relations.js');
 const initilalizeAnListenExpress = () => {
     try {
         app.use(express.json())
-            .use('/api', require('./api/routes/index.js'))
             .use(cors())
+            .use('/api', require('./api/routes/index.js'))
             .use(morgan('dev'))
             .listen(3000, () => {
                 console.info('Server started')

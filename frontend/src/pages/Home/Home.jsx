@@ -1,11 +1,16 @@
-import React from 'react'
+import Carrousel from '../../components/Carrousel/Carrousel'
+import Categories from '../../components/Categories/Categories'
+import ComingEvents from '../../components/ComingEvents/ComingEvents'
+import './Home.css'
 
 function Home() {
-    return (
-        <div>
-            <h1>holaaa</h1>
-        </div>
-    )
+
+  return (
+    <div className="container">
+      <Carrousel />
+      <ComingEvents />
+      <Categories />
+    </div>)
 }
 
 export default Home

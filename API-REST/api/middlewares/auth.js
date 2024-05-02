@@ -1,6 +1,7 @@
 // Importamos tanto el modelo User como el paquete jwt -jsonwebtoken-
 const User = require('../models/user.model');
 const jwt =  require('jsonwebtoken');
+require('dotenv').config();
 
 // Creamos una función checkAuth, que como su nombre indica, es para validar la autenticación
 function checkAuth(request, response, next) {
@@ -13,7 +14,7 @@ function checkAuth(request, response, next) {
     // Utilizamos el jwt.verify para validar el token dado
     jwt.verify(
         request.headers.authorization, // El token extraído del encabezado de autorización
-        process.env.SECRET, // La clave secreta para desencriptar el token, se almacena en las variables de entorno
+        'secret', // La clave secreta para desencriptar el token, se almacena en las variables de entorno
         async (error, payload) => {
             // si hay un error de verificación, como token expirado o modificado
             if (error) {

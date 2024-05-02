@@ -10,6 +10,8 @@ const initializeRelations = () => {
         Category.hasMany(Event);
         Event.belongsTo(Category);
 
+        User.hasMany(Event, { as: 'owner' });
+        Event.belongsTo(User, { as: 'owner' });
         // Relación N:M de User - Event
         User.belongsToMany(Event, { through : Assistance });
         Event.belongsToMany(User, { through : Assistance });
