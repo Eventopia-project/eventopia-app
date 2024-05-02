@@ -69,7 +69,12 @@ const login = async (request, response) => {
             // Firma un token JWT usando una clave secreta y establecemos un tiempo límite -expiración-
             const token = jwt.sign(payload, 'secret', { expiresIn: '2h' });
             // Devuelve el token generado con el estado 200 -éxito-
-            return response.status(200).json({ token });
+            return response.status(200).json({ token,
+                user: {
+                    id: user.id,
+                    name: user.name
+                }
+            });
         } else {
             // Si la contraseña no es correcta, tira un not found
             return response.status(404).json({ message: 'Email or password wrong.' });

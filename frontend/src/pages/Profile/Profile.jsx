@@ -3,6 +3,7 @@ import { getProfile } from '../../services/users'
 import { createEvent } from '../../services/events'
 import { getCategories } from '../../services/categories'
 import UserEvents from '../../components/UserEvents/UserEvents'
+import './Profile.css';
 
 function Profile() {
   const [user, setUser] = useState({})
@@ -108,10 +109,10 @@ function Profile() {
 
   console.log(user)
   return (
-    <div>
-      <section>
-        <h2>Create your event</h2>
-        <form onSubmit={handleSubmit}>
+    <div className='container-profile'>
+      <section className='section-profile'>
+        <h2 className='section-profile__h2'>Create your event</h2>
+        <form onSubmit={handleSubmit} className='section-profile__form'>
           <label htmlFor="name">Name</label>
           <input type="text" id="name" name="name" onChange={handleName}/>
           <label htmlFor="description">Description</label>
@@ -133,7 +134,7 @@ function Profile() {
         </form>
       </section>
       <div className='events-container'>
-        <div>
+        <div className='your-events'>
           <h2>Your events</h2>
           <UserEvents events={user?.owner} optionsButton={true} />
         </div>

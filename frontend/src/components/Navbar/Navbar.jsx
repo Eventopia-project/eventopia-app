@@ -34,9 +34,9 @@ function Navbar({ inFooter }) {
         )}
         <li>
           {localStorage.getItem('token') && (
-            <>
-              <li>
-                  <p>Hola, { userRegistered }</p>
+            <ul className='profile-user'>
+              <li className='li-text'>
+                  <p className='josefin-sans-font '>Hello, { userRegistered }</p>
               </li>
               <li>
                 <Link to="/profile" data-text="Profile">
@@ -48,7 +48,7 @@ function Navbar({ inFooter }) {
                   <button className={inFooter ? "nav__footer" : ""} onClick={() => localStorage.clear()}>Logout</button>
                 </Link>
               </li>
-            </>
+            </ul>
           )}
         </li>
         {inFooter && (

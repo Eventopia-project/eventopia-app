@@ -1,4 +1,51 @@
+.container-profile {
+    width: 100%;
+    display: flex;
+}
+
+.section-profile {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5em;
+    margin-left: 2em;
+}
+
+.section-profile__h2 {
+    width: 100%;
+    font-size: calc(1.5em + 1vw);
+    margin-bottom: 1em;
+    color: var(--blue);
+}
+
+.section-profile__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    input {
+        width: 80%;
+        padding: 0.5rem;
+        border-bottom: 1px solid var(--blue);
+        outline: none;
+        font-size: calc(1em + .2vw);
+    }
+
+    label {
+        font-size: calc(1em + .2vw);
+        color: var(--blue-darker);
+    }
+}
+
 .events-container {
     display: flex;
-    
+    flex-direction: column;
+    gap: 1em;
+}
+
+.your-events{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }

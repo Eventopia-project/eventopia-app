@@ -24,6 +24,21 @@ a, Link, button {
     cursor: pointer;
 }
 
+.profile-user {
+    display: flex;
+    column-gap: 1.4em;
+}
+
+.li-text {
+    display: flex;
+    align-items: center;
+    p{
+        width: calc(5em + 2vw);
+        text-transform: uppercase;
+        color: var(--blue-darker);
+    }
+}
+
 .nav__footer {
     color: white !important;
     padding: 1em;
