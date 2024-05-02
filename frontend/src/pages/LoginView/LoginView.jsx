@@ -4,8 +4,8 @@ import './LoginView.css'
 
 function LoginView() {
   return (
-    <div>
-      <Login />
+    <div className='container'>
+      <Login className="login"/>
     </div>
   )
 }
