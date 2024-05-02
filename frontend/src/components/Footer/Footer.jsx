@@ -6,15 +6,14 @@ function Footer() {
     <footer className='footer'>
       <Navbar inFooter={true} />
       <div className="social-media">
-        <a href="https://www.facebook.com/"><i className="fab fa-facebook-square"></i></a>
-        <a href="https://www.instagram.com/"><i className="fab fa-instagram"></i></a>
-        <a href="https://www.twitter.com/"><i className="fab fa-twitter"></i></a>
-        <a href="https://www.linkedin.com/"><i className="fab fa-linkedin"></i></a>
-        <a href="https://www.youtube.com/"><i className="fab fa-youtube"></i></a>
+        <a href="https://www.facebook.com/"><img src="/public/images/icons/facebook.svg" alt="facebook" /></a>
+        <a href="https://www.instagram.com/"><img src="/public/images/icons/instagram.svg" alt="instagram" /></a>
+        <a href="https://www.twitter.com/"><img src="/public/images/icons/twitter.svg" alt="twitter" /></a>
+        <a href="https://www.linkedin.com/"><img src="/public/images/icons/linkedin.svg" alt="linkedin" /></a>
+        <a href="https://www.youtube.com/"><img src="/public/images/icons/youtube.svg" alt="youtube" /></a>
       </div>
       <div className="copyright">
-        <p className="copyright__p">All rights reserved</p>
-        <p className="copyright__p">Developed with ❤️ and 💪 by /insert names/</p>
+        <p className="copyright__p">Developed with 💪 by <a href="https://github.com/Monica-R">Monica-R</a> & <a href="#">Rodrigo Aquino</a>. &copy; All rights reserved</p>
       </div>
     </footer>
   )
