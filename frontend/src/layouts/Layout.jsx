@@ -1,12 +1,16 @@
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
 import { Outlet } from 'react-router-dom'
+import { useLocation } from 'react-router-dom';
 function Layout() {
+  const location = useLocation();
+  const hideOnRoutes = ['/login', '/signup'];
+
   return (
     <>
-      <Header />
+      {!hideOnRoutes.includes(location.pathname) && <Header />}
       <Outlet />
-      <Footer />
+      {!hideOnRoutes.includes(location.pathname) && <Footer />}
     </>
   )
 }
