@@ -25,14 +25,14 @@ function Categories() {
       return null;
     }
     return categories.map((category, index) => {
-      return <button key={index} onClick={() => handleClick(category.id)}>{category.name}</button>
+      return <button className="item" key={index} onClick={() => handleClick(category.id)}>{category.name}</button>
     })
   }
 
 
   return (
     <>
-      <div>Categories</div>
+      <h1 className='categories__h1'>Categories</h1>
       <div className="all-categories">
         {showAllCategories()}
       </div>
