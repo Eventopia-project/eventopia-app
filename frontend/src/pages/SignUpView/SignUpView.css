@@ -1,4 +1,9 @@
 .container-sign {
     width: 100%;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, rgba(228,108,188,0.8001401244091386) 20%, rgba(122,182,193,0.8001401244091386) 60%, rgba(250,211,121,0.8029412448573179) 98%);
 }

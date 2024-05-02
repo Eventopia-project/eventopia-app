@@ -1,0 +1,20 @@
+.terms {
+    margin: 0 auto;
+    width: 80%;
+    padding: 2em;
+    color: var(--black);
+    h1 {
+        font-size: calc(1.5em + 1vw);
+        margin-bottom: 1em;
+        color: var(--blue-darker);
+    }
+    p {
+        font-size: 1.2em;
+        line-height: 1.5em;
+        margin-bottom: 1em;
+        font-weight: normal;
+        span {
+            font-weight: 700;
+        }
+    }
+}
