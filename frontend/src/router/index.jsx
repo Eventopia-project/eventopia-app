@@ -6,7 +6,7 @@ import NotFound from '../pages/NotFound/NotFound'
 import AboutView from '../pages/AboutView/AboutView'
 import Categories from '../pages/Categories/Categories'
 import SignUp from '../pages/SignUp/SignUpView'
-import Login from '../pages/Login/LoginView'
+import LoginView from '../pages/LoginView/LoginView';
 import Profile from '../pages/Profile/Profile'
 import PrivacyView from '../pages/PrivacyView/PrivacyView'
 import TermsView from '../pages/TermsView/TermsView'
