@@ -5,7 +5,7 @@
     justify-content: center;
     width: 100%;
     background-color: var(--white);
-    row-gap: 1em;
+    row-gap: 4em;
     padding: 1em 0;
 }
 
@@ -21,7 +21,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    column-gap: 1em;
+    column-gap: 4em;
 }
 
 .card-date {
@@ -59,18 +59,23 @@
 .card-title {
     display: flex;
     justify-content: space-evenly;
+    padding-top: .4em;
 }
 
 .card-title h2 {
     width: 70%;
-    font-size: calc(1.2em + 0.8vw);
+    font-size: calc(1em + 0.8vw);
     color: var(--blue);
     font-weight: 500;
 }
 
 .card-title span {
-    display: inline-block;
-    width: 60%;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    column-gap: 1em;
+    font-weight: 500;
+    font-size: calc(.8em + 0.5vw);
 }
 
 .location-img span {
@@ -85,4 +90,20 @@
     font-size: calc(1em + 0.5vw);
     font-weight: 400;
     color: var(--black);
+    padding-top: .5em;
+}
+
+.card-price{
+    width: 20% !important;
+    padding: 0 1em;
+    font-size: calc(1em + 0.5vw);
+    font-weight: 500;
+    color: var(--white);
+    background-color: var(--orange);
+    justify-content: center;
+    border-radius: .2em;
+    -webkit-border-radius: .2em;
+    -moz-border-radius: .2em;
+    -ms-border-radius: .2em;
+    -o-border-radius: .2em;
 }

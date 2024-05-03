@@ -35,7 +35,7 @@ function ComingEvents() {
                 </span>
                 {eventItem.location}
               </span>
-              <span>{eventItem.price}</span>
+              <span className='card-price baloo-2-font'>{eventItem.price} €</span>
             </div>
             <p className='description'>{eventItem.description}</p>
           </div>

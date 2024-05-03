@@ -27,13 +27,14 @@ a, Link, button {
 .profile-user {
     display: flex;
     column-gap: 1.4em;
+    align-items: center;
 }
 
 .li-text {
     display: flex;
     align-items: center;
     p{
-        width: calc(5em + 2vw);
+        width: calc(10em + 2vw);
         text-transform: uppercase;
         color: var(--blue-darker);
     }
