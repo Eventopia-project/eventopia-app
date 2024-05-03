@@ -1,0 +1,21 @@
+.privacy {
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 800px;
+    font-size: 1.2em;
+    line-height: 1.5em;
+    h1  {
+        font-size: calc(1em + 1vw);
+        text-align: center;
+        margin: 1em;
+        margin-bottom: 1em;
+        text-transform: uppercase;
+    }
+    ol li, p {
+        margin-bottom: 1em;
+        font-weight: normal;
+        span {
+            font-weight: 700;
+        }
+    }
+}
