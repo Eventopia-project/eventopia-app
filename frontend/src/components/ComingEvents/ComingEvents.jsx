@@ -19,7 +19,6 @@ function ComingEvents() {
 
   const display = () => {
     return events.map((eventItem, index) => {
-      console.log(eventItem.date_event)
       return (
         <div key={index} className="event-item">
           <div className='card-date'>

@@ -58,9 +58,6 @@ function Profile() {
   const handleCategory = (event) => {
     setCategoryId(event.target.value);
   }
-  
-  console.log(userId)
-  console.log(ownerId)
 
   useEffect(() => {
     const showAllCategories = async () => {
@@ -71,12 +68,10 @@ function Profile() {
   }, [])
 
   useEffect(() => {
-    console.log(categoryId);
   }, [categoryId]);
   
 
   const categoryOptions = categories?.map((category, index) => {
-    console.log(category.id, category.name)
     return (
       <option key={index} value={category.id} name="category">{category.name}</option>
     )
@@ -100,14 +95,12 @@ function Profile() {
     try {
       const response = await createEvent({name, description, date, location, price, categoryId})
       setIsSend(!isSend)
-      console.log(response)
       console.log('se ha añadido correctamente');
     } catch (error) {
       console.error(error);
     }
   }
-
-  console.log(user)
+  
   return (
     <div className='container-profile'>
       <section className='section-profile'>

@@ -8,7 +8,6 @@ const Event = require('../models/event.model.js');
 const getAllUsers = async (request, response) => {
     try {
         const users = await User.findAll();
-        console.log('¿un objeto?', users);
         return response.status(200).json(users);
     } catch (error) {
         console.error(error);

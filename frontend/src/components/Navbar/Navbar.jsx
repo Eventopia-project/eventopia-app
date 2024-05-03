@@ -3,7 +3,6 @@ import './Navbar.css'
 
 function Navbar({ inFooter }) {
   const userRegistered = localStorage.getItem('member');
-  console.log(userRegistered)
   return (
     <nav className="nav josefin-sans-font">
       <ul className={inFooter ? "ul__nav footer__nav" : "ul__nav"}>
