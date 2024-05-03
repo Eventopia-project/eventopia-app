@@ -1,0 +1,102 @@
+.container-login {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login {
+    width: 30%;
+    background-color: var(--white);
+    border-top-left-radius: 2em;
+    border-bottom-right-radius: 2em;
+    box-shadow: .2em .2em 0 var(--light-blue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em 0;
+}
+
+.login__h1 {
+    width: 100%;
+    font-size: calc(1em + 1vw);
+    text-align: center;
+    color: var(--blue-darker);
+    padding: .8em 0;
+}
+
+.login__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+}
+
+.email-login, 
+.pass-login {
+    width: 80%;
+    padding: .5em;
+    margin: .8em 0;
+    border: none;
+    border-bottom: .1em solid var(--blue-darker);
+    background-color: var(--white);
+    font-size: calc(.4em + .5vw);
+}
+
+.email-login:focus, 
+.pass-login:focus{
+    outline: none;
+    border-bottom: .1em solid var(--light-blue);
+}
+
+button[type="submit"] {
+    width: 40%;
+    padding: 1em;
+    margin: .8em 0;
+    border: none;
+    border-radius: .3em;
+    background-color: var(--blue-darker);
+    color: var(--white);
+    font-size: calc(.4em + .5vw);
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--blue);
+}
+
+.sign-up-text {
+    font-size: calc(.4em + .5vw);
+    font-weight: normal;
+    margin: .5em 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    column-gap: 1em;
+}
+
+.signup-button {
+    transition: all .3s ease;
+}
+
+.go-home {
+    font-size: calc(.4em + .5vw);
+    font-weight: normal;
+    margin: .5em 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    column-gap: 1em;
+    transition: all .3s ease;
+}
+
+.signup-button:hover,
+.go-home:hover {
+    color: var(--orange);
+    text-decoration: underline 1px var(--orange);
+}

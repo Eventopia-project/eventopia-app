@@ -1,0 +1,59 @@
+.event-card {
+    width: calc(33.3333% - 20px);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 2em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: var(--black);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    h2 {
+        font-size: calc(.8em + 1vw);
+        margin-bottom: .5em;
+        color: var(--blue-darker);
+    }
+}
+
+.header-card {
+    width: 100%;
+    display: flex;
+    column-gap: 1em;
+}
+
+.date-card,
+.location-card{
+    display: flex;
+    align-items: center;
+    column-gap: .5em;
+}
+
+.date-card img,
+.location-card img {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.price-card {
+    width: calc(5em - 1vw);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: .5em;
+    padding: .2em 1em;
+    border-radius: .2em;
+    background-color: var(--orange);
+    color: var(--white);
+    -webkit-border-radius: .2em;
+    -moz-border-radius: .2em;
+    -ms-border-radius: .2em;
+    -o-border-radius: .2em;
+}
+
+.description-card {
+    margin-top: 1em;
+    font-size: calc(.6em + .5vw);
+    font-weight: normal;
+}

@@ -1,0 +1,109 @@
+.events {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: var(--white);
+    row-gap: 4em;
+    padding: 1em 0;
+}
+
+.events__h1{
+    font-size: calc(1.5em + 1vw);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--black);
+    margin: 1em 0;
+}
+
+.event-item {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    column-gap: 4em;
+}
+
+.card-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: .3em;
+    width: calc(100% / 9);
+    height: calc(4em - 1vh);
+    border-top: 8px solid var(--yellow);
+    background-color: var(--white);
+    font-size: calc(1em + 0.8vw);
+    font-weight: bold;
+    box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 0px 14px 14px;
+}
+
+.month {
+    color: var(--blue);
+}
+
+.card-description {
+    width: 40%;
+    height: calc(14em - 1vh);
+    background-color: var(--white);
+    box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    padding: 0 1em;
+    border-top: 8px solid var(--light-blue);
+}
+
+
+.card-title {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: .4em;
+}
+
+.card-title h2 {
+    width: 70%;
+    font-size: calc(1em + 0.8vw);
+    color: var(--blue);
+    font-weight: 500;
+}
+
+.card-title span {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    column-gap: 1em;
+    font-weight: 500;
+    font-size: calc(.8em + 0.5vw);
+}
+
+.location-img span {
+    width: 10%;
+    display: inline-block;
+    img {
+        width: 100%;
+    }
+}
+
+.description {
+    font-size: calc(1em + 0.5vw);
+    font-weight: 400;
+    color: var(--black);
+    padding-top: .5em;
+}
+
+.card-price{
+    width: 20% !important;
+    padding: 0 1em;
+    font-size: calc(1em + 0.5vw);
+    font-weight: 500;
+    color: var(--white);
+    background-color: var(--orange);
+    justify-content: center;
+    border-radius: .2em;
+    -webkit-border-radius: .2em;
+    -moz-border-radius: .2em;
+    -ms-border-radius: .2em;
+    -o-border-radius: .2em;
+}
