@@ -17,9 +17,10 @@ const initilalizeAnListenExpress = () => {
             .use(helmet.contentSecurityPolicy(
                 {
                     directives: {
-                        defaultSrc: ["'self'"],
-                        scriptSrc: ["'self'"],
+                        defaultSrc: ["'*'"],
+                        scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'", 'www.google.es'],
                         imgSrc: ["'self'", 'data:'],
+                        styleSrc: ["'self'", "'unsafe-inline'"],
                     }
                 }
             ))
