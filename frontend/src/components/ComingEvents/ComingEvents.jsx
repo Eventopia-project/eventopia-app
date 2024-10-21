@@ -14,10 +14,17 @@ function ComingEvents() {
 
   async function getEventsData() {
     const response = await getEvents()
-    setEvents(response)
+    if(Array.isArray(response)) {
+      setEvents(response)
+    } else {
+      setEvents([])
+    }
   }
 
   const display = () => {
+    if(!Array.isArray(events)) {
+      return <p className='no-events'>No events</p>
+    }
     return events.map((eventItem, index) => {
       return (
         <div key={index} className="event-item">

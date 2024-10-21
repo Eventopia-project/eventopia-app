@@ -14,7 +14,11 @@ const initilalizeAnListenExpress = () => {
             .use(cors())
             .use('/api', require('./api/routes/index.js'))
             .use(morgan('dev'))
-            .listen(3000, () => {
+            .use(express.static(path.join(__dirname, '../frontend/dist')))
+            .get('*', (req, res) => {
+                res.sendFile(path.resolve(__dirname, '../frontend/dist', 'index.html'));
+            })
+            .listen(3000, '0.0.0.0', () => {
                 console.info('Server started')
             })
     } catch (error) {

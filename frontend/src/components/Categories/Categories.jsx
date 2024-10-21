@@ -15,6 +15,9 @@ function Categories() {
   }
 
   function showCategories() {
+    if (!Array.isArray(categories)) {
+      return <div>There are no categories</div>
+    }
     if (categories.length < 3) {
       return categories.map((category, index) => {
         return <div key={index} className='category-item'>{category.name}</div>
