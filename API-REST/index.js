@@ -18,7 +18,7 @@ const initilalizeAnListenExpress = () => {
                 {
                     directives: {
                         defaultSrc: ["'self'"],
-                        scriptSrc: ["'self'", "'unsafe-eval'"],
+                        scriptSrc: ["'self'"],
                         imgSrc: ["'self'", 'data:'],
                     }
                 }
