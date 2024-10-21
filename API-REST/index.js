@@ -2,7 +2,6 @@
 const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
-const helmet = require('helmet');
 const app = express();
 
 // Importamos las funciones de la conexión base de datos
@@ -13,20 +12,9 @@ const initilalizeAnListenExpress = () => {
     try {
         app.use(express.json())
             .use(cors())
-            .use(helmet())
-            .use(helmet.contentSecurityPolicy(
-                {
-                    directives: {
-                        defaultSrc: ["'*'"],
-                        scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'", 'www.google.es'],
-                        imgSrc: ["'self'", 'data:'],
-                        styleSrc: ["'self'", "'unsafe-inline'"],
-                    }
-                }
-            ))
             .use('/api', require('./api/routes/index.js'))
             .use(morgan('dev'))
-            .listen(3000, () => {
+            .listen(3000, '0,0,0,0', () => {
                 console.info('Server started')
             })
     } catch (error) {
