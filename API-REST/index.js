@@ -14,10 +14,6 @@ const initilalizeAnListenExpress = () => {
             .use(cors())
             .use('/api', require('./api/routes/index.js'))
             .use(morgan('dev'))
-            .use(express.static(path.join(__dirname, '../frontend/dist')))
-            .get('*', (req, res) => {
-                res.sendFile(path.resolve(__dirname, '../frontend/dist', 'index.html'));
-            })
             .listen(3000, () => {
                 console.info('Server started')
             })
