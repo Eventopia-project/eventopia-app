@@ -14,7 +14,7 @@ const initilalizeAnListenExpress = () => {
             .use(cors())
             .use('/api', require('./api/routes/index.js'))
             .use(morgan('dev'))
-            .listen(3000, '0.0.0.0', () => {
+            .listen(3000, () => {
                 console.info('Server started')
             })
     } catch (error) {
