@@ -18,7 +18,7 @@ const initilalizeAnListenExpress = () => {
             .get('*', (req, res) => {
                 res.sendFile(path.resolve(__dirname, '../frontend/dist', 'index.html'));
             })
-            .listen(3000, '0.0.0.0', () => {
+            .listen(3000, () => {
                 console.info('Server started')
             })
     } catch (error) {
