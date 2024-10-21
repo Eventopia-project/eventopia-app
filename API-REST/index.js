@@ -12,6 +12,10 @@ const initilalizeAnListenExpress = () => {
     try {
         app.use(express.json())
             .use(cors())
+            .use((req, res, next) => {
+                res.setHeader("Content-Security-Policy", "default-src 'self'; script-src 'self' 'unsafe-eval'; img-src 'self' data:");
+                next();
+            })
             .use('/api', require('./api/routes/index.js'))
             .use(morgan('dev'))
             .listen(3000, () => {
