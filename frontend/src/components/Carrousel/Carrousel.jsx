@@ -33,37 +33,37 @@ function Carrousel() {
       <Slider {...settings} className='slider__section'>
         <div className='img-item'>
           <img
-            src='/public/images/mirroring-image-young-friends.webp'
+            src='/images/mirroring-image-young-friends.webp'
             alt='img1'
           />
         </div>
         <div className='img-item'>
           <img
-            src='/public/images/fair.webp'
+            src='/images/fair.webp'
             alt='img2'
           />
         </div>
         <div className='img-item'>
           <img
-            src='/public/images/race.webp'
+            src='/images/race.webp'
             alt='img3'
           />
         </div>
         <div className='img-item'>
           <img
-            src='/public/images/three-girls.webp'
+            src='/images/three-girls.webp'
             alt='img4'
           />
         </div>
         <div className='img-item'>
           <img
-            src='/public/images/influencer-taking-photo-cake-market.webp'
+            src='/images/influencer-taking-photo-cake-market.webp'
             alt='img5'
           />
         </div>
       </Slider>
       <Link className="arrow" to="events-element" smooth={true} onClick={handleClick} style={{position: 'fixed', bottom: '20px', right: '20px'}}>
-        <img src="/public/images/arrow-down.svg" alt="arrow-down" />
+        <img src="/images/arrow-down.svg" alt="arrow-down" />
       </Link>
     </section>
   )

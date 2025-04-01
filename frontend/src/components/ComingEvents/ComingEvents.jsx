@@ -37,7 +37,7 @@ function ComingEvents() {
               <h2>{eventItem.name}</h2>
               <span className='location-img'>
                 <span>
-                  <img src="/public/images/icons/map-pin.svg" />
+                  <img src="/images/icons/map-pin.svg" />
                 </span>
                 {eventItem.location}
               </span>
